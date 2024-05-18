@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+#estruturar url caso a linguagem seja informada
 def busca_perfil_linguagem(usuario, cidade, estado, linguagem, pagina_cont):
       usuario_url = usuario.replace(" ", "+")
 
@@ -11,6 +12,7 @@ def busca_perfil_linguagem(usuario, cidade, estado, linguagem, pagina_cont):
 
       return base_url.format(usuario_url=usuario_url, cidade=cidade, estado=estado, linguagem=linguagem, pagina_cont=pagina_cont)
 
+#estruturar a url sem linguagem
 def busca_perfil(usuario, cidade, estado,pagina_cont):
       usuario_url = usuario.replace(" ", "+")
 
@@ -18,7 +20,7 @@ def busca_perfil(usuario, cidade, estado,pagina_cont):
 
       return base_url.format(usuario_url=usuario_url, cidade=cidade, estado=estado, pagina_cont=pagina_cont)
 
-
+#buscar e retornar informações 
 def buscar_user(url, texto_procurado, pagina_cont):
 
         try:
@@ -30,9 +32,8 @@ def buscar_user(url, texto_procurado, pagina_cont):
         contador = 0
         tamanho_lista = 10
         conteudo = response.text
-        teste = []
-        mandar_infor = []
 
+        #verificando se o nome de usuario esta presente nas informações
         if texto_procurado in conteudo:      
             pesquisador = conteudo
 

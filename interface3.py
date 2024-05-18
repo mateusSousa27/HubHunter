@@ -1,7 +1,7 @@
 import customtkinter
 from funcoes_usadas import *
 
-
+#retornar os links no terminal(temporario)
 def retornar_link():
     nome_completo = entrada_nome.get()
     parametro = nome_completo.split(' ')
@@ -11,11 +11,11 @@ def retornar_link():
     estado = entrada_estado.get()
 
     linguagem = entrada_linguagem.get()
-    #print(linguagem)
 
     pagina_cont = 1
     total_de_paginas = 1
 
+    #looping para realizar a mudança de pagina
     while pagina_cont <= total_de_paginas:
         if(linguagem == 'none'):
             url_perfil = busca_perfil(nome_completo, cidade, estado, pagina_cont)
@@ -26,6 +26,8 @@ def retornar_link():
 
         pagina_cont+=1
 
+
+#interface gráfica
 janela = customtkinter.CTk()
 janela.title("interface")
 janela.geometry("1200x600")
