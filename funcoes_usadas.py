@@ -74,6 +74,6 @@ def buscar_user(url, texto_procurado, pagina_cont):
 
             
         else:
-            print('Texto não encontrado na página.')
+            print('Nome não encontrado na página.')
             
         return total_de_paginas_encontradas
